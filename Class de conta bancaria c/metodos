@@ -1,0 +1,32 @@
+class Conta {
+    constructor(saldoCorrente,saldoPoupanca,jurosPoupanca){
+    this.saldoCorrente=saldoCorrente
+    this.saldoPoupanca=saldoPoupanca
+    this.jurosPoupanca=jurosPoupanca
+}
+deposito(num){
+      this.saldoCorrente += num
+     
+}
+saque(num){
+     (this.saldoCorrente -=num)
+    
+}
+transferir(num){
+    this.saldoPoupanca-= num
+    this.saldoCorrente =+ num
+
+}
+  
+}
+
+class ContaEspecial extends Conta {
+    constructor(saldoCorrente,saldoPoupanca,jurosPoupanca){
+    super(saldoCorrente,saldoPoupanca,jurosPoupanca*2)
+    }  
+}
+
+let conta2= new ContaEspecial (1000,500,100)
+console.log(conta2)
+conta2.saque(800)
+console.log(conta2)
