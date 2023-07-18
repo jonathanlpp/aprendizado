@@ -1,0 +1,39 @@
+class Carro { 
+    constructor(marca,cor,gasolinaRestante,consumo){
+    this.marca = marca
+    this.cor= cor
+    this.consumo=consumo
+    this.gasolinaRestante=gasolinaRestante
+   
+
+} set novaMarca(novaMarca){
+    this.marca=NovaMarca
+} 
+
+  set novaCor(novaCor){
+    this.cor=novaCor
+  
+   } set novorodado(novorodado){
+    this.gasolinaRestante=novorodado
+   }
+ set novoConsumo(novaGasolina){
+     this.consumo=novaGasolina
+   }
+
+   dirigir(km) {
+    let litrosConsumidos= km / this.consumo
+    this.gasolinaRestante -= litrosConsumidos
+   }
+   abastecer(l){
+    this.gasolinaRestante += l
+   }
+}
+
+
+let Carro1 = new Carro ("Fiat","preto", 100 ,20)
+console.log(Carro1)
+
+Carro1.dirigir(50)
+console.log(Carro1)
+Carro1.abastecer(20)
+console.log(Carro1)
