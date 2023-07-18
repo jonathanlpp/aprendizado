@@ -1,0 +1,29 @@
+class Voo{
+    constructor(codigoVoo,origem,destino,assentoDisponivel){
+    this.codigoVoo=codigoVoo
+    this.origem=origem
+    this.destino=destino
+    this.assentoDisponivel=assentoDisponivel
+}
+reservarAssentos() {
+    if(this.assentoDisponiveis >0){
+        this.assentoDisponivel--
+
+        return this.assentoDisponivel
+        }else if (this.assentoDisponivel === 0){
+            console.log("nao há assentos diponiveis para reservar")
+
+        }
+    }
+    consultarAssento(){
+        return this.assentoDisponivel
+    }
+    
+}
+
+let voo1= new Voo("1234","sao paulo","rio de janeiro",50)
+
+console.log(voo1.consultarAssento())
+
+voo1.reservarAssentos(2) 
+
